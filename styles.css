@@ -2,18 +2,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  --bg-light-mode: #f2f9ff;
-  --bg-dark-mode: #223344;
-  --text-light-mode: #223344;
-  --text-dark-mode: #f2f9ff;
+  outline: none;
+}
+
+:root {
+    --bg-colour: #f2f9ff;
+  --text-colour: #223344;
   --button-color: #2a4dd0;
+}
+
+.dark-mode {
+  --text-colour: #f2f9ff;
+  --bg-colour: #223344;
+ 
 }
 
 html,
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-light-mode);
+  background-color: var(--bg-colour);
   font-family: "Poppins", sans-serif;
 }
 
@@ -25,31 +33,34 @@ main {
   flex-direction: column;
 }
 
+
 #hero {
-  aspect-ratio: auto;
+    aspect-ratio: auto;
   height: 40vh;
   margin: auto;
   /* width: 100%; */
 }
 
 .hamburger {
-  background: none;
+    background: none;
   border: none;
 }
 
 p {
-  color: gray;
+    color: gray;
 }
 
 h2 {
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 600;
+  color: var(--text-colour);
 }
 
 h1 {
   font-size: 2.5rem;
   width: 10ch;
+  color: var(--text-colour);
 }
 
 header {
@@ -69,19 +80,53 @@ ul {
   gap: 1rem;
 }
 
-header nav ul li a {
+a {
+    position: relative;
   text-decoration: none;
+  color: var(--text-colour);
+  font-weight: 600;
+
 }
 
-a:hover,
-a:active {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background-color: var(--button-color);
+  transition: width 1s ease;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 .theme {
-  background-color: var(--bg-dark-mode);
+    background-color: var(--text-colour);
+    border-radius: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.22rem;
+    width: 3.3rem;
+    height: 1.4rem;
 }
+
+.theme button {
+    display: flex;
+    align-items: flex-end;
+    border-radius: 50%;
+    border: none;
+}
+
+.theme #theme-button {
+    background-color: var(--bg-colour);
+    border-radius: 50%;
+    width: 1rem;
+}
+
 
 .sidebar {
   display: none;
@@ -107,12 +152,18 @@ section {
 
 #start {
   background-color: var(--button-color);
-  color: var(--bg-light-mode);
+  color: var(--bg-colour);
   padding: 1rem 2rem;
   text-transform: uppercase;
   border-radius: 0.8rem;
   font-weight: 700;
   border: none;
+  font-size: 1em;
+  transition: background-color 0.15s;
+}
+
+#start:hover, #start:active {
+    background-color: darkblue;
 }
 
 #live {
@@ -124,11 +175,18 @@ section {
   font-size: 1rem;
   border: none;
   letter-spacing: 0.1ch;
+  text-decoration-thickness: 3px;
+  transition: text-underline-offset 0.15s;
+}
+
+#live:hover, #live:active {
+    text-underline-offset: 0.6rem;
+   
 }
 
 .ticks ul li {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   font-size: 0.8rem;
   color: gray;
 }
@@ -143,12 +201,14 @@ section {
   height: 1.2rem;
   background-image: url(resources/Done_ring_round_fill.svg);
   background-size: cover;
+
   background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 780px) {
+
     :root {
-        font-size: 17px;
+        font-size: 16px;
     }
 
   .hamburger {
@@ -161,11 +221,15 @@ section {
     justify-content: space-between;
   }
 
+
+  h1 {
+    font-size: 3.2em;
+  }
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 4rem;
+    padding: 2rem 2rem 4rem;
   }
 
   nav {
@@ -192,25 +256,108 @@ section {
   main {
     display: flex;
     flex-direction: row-reverse;
-    padding: 4em;
+    padding: 0 4em;
+    justify-content: center;
   }
 
   section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    flex: 1.2;
+    flex: 0.4;
   }
 
   #hero {
     flex: 1;
     aspect-ratio: auto;
-    width: 80%;
+    max-width: 600px;
     height: auto;
   }
 
   .logo-container {
     flex: 2;
   }
+
+  .ticks ul {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
+@media screen and (min-width: 1350px) {
+    :root {
+        font-size: 18px;
+    }
+
+  .hamburger {
+    display: none;
+  }
+
+  .sidebar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+
+  h1 {
+    font-size: 3.2em;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem 4rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 3;
+    justify-content: space-between;
+  }
+
+  #logo {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 10rem;
+  }
+
+  .theme {
+    justify-self: flex-end;
+    margin-left: 2rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 4em;
+    justify-content: center;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0.4;
+  }
+
+  #hero {
+    flex: 1;
+    aspect-ratio: auto;
+    max-width: 600px;
+    height: auto;
+  }
+
+  .logo-container {
+    flex: 2;
+  }
+
+  .ticks ul {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
