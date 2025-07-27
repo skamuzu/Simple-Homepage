@@ -1,0 +1,19 @@
+@import url(main.css);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1em;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--text-colour);
+    height: 100vh;
+}
+
+.sidebar-toggle {
+    transform: translateX(150%);
+}

@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+:root {
+    --bg-colour: #f2f9ff;
+  --text-colour: #223344;
+  --button-color: #2a4dd0;
+}
+
+.dark-mode {
+  --text-colour: #f2f9ff;
+  --bg-colour: #223344;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-colour);
+  font-family: "Poppins", sans-serif;
+}
+
+
