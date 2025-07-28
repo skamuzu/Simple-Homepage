@@ -1,19 +1,96 @@
 @import url(main.css);
 
-header {
+nav{
+    height: 4em;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 1em;
+    align-items: center;
+    padding: 4em 4em;
 }
 
-.sidebar {
+.links-container {
+    height: 100%;
+    width: 60%;
     display: flex;
-    flex-direction: column;
-    background-color: var(--text-colour);
-    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2em;
 }
 
-.sidebar-toggle {
-    transform: translateX(150%);
+nav a {
+    height: 100%;
+    padding: 0.2em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-colour);
 }
+
+.button-container {
+    margin-left: auto;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    display: none;
+}
+
+@media(max-width:950px) {
+    .links-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: var(--text-colour);
+        z-index: 10;
+        width: 300px;
+        padding: 1em;
+        box-shadow: -5px 0 5px rgba(0,0,0,0.25);
+        border-top-left-radius: 1em;
+    
+    }
+
+    .links-container a {
+        color: var(--bg-colour);
+        height: auto;
+    
+        width: 100%;
+        max-height: 30px;
+    }
+
+    .close-sidebar-button {
+        display: block;
+        color: white;
+    }
+
+    nav {
+    padding: 3em 1em;
+    }
+
+    .button-container {
+        position: relative;
+        top: -49%;
+        background-color: var(--bg-colour);
+        display: flex;
+        width: 4em;
+        border-radius: 25px;
+        padding: 0.2em;
+    }
+
+    .button-container button {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--bg-colour);
+    }
+}
+

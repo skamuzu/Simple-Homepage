@@ -8,60 +8,38 @@
     <link rel="stylesheet" href="header.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <script defer src="index.js"></script>
   </head>
-  <body >
-    <header class=".header">
-      <div class="logo-container">
-        <img id="logo" src="resources/logo-light.svg" alt="Logo" />
+  <body>
+    <nav>
+      <img src="resources/logo-light.svg" alt="">
+      <input type="checkbox" id="sidebar-active" />
+      <label for="sidebar-active" class="open-sidebar-button">
+        <img src="resources/hamburger-button.svg" alt="" />
+      </label>
+
+      <div class="links-container">
+        <label for="sidebar-active" class="close-sidebar-button">
+          <img src="resources/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+        </label>
+
+        <a href="#">About us</a>
+        <a href="#">Product</a>
+        <a href="#">Resources</a>
+        <a href="#">Contact</a>
+        <div class="button-container">
+          <button><img src="resources/Sun_fill.svg" alt="" /></button>
+        </div>
       </div>
-      <nav id="nav">
-        <button id="hamburger" class="hamburger" aria-label="Toggle Menu">
-          <img src="resources/hamburger-button.svg" alt="" />
-        </button>
-        <div class="sidebar">
-          <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Resource</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <div class="theme">
-            <button class="light-button">
-              <img id="theme-button" draggable="true" src="resources/Sun_fill.svg" alt="" />
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <img
-        id="hero"
-        src="resources/hero-image-simple-homepage.png"
-        alt="Hero"
-      />
-      <section>
-        <h2>&#128526; Simple Way to Communicate</h2>
-        <h1>Actions for Accessibility in Design</h1>
-        <p>
-          The fastest way to build and deploy websites with reusable components.
-        </p>
-        <div class="button_container">
-          <button id="start">Get Started</button>
-          <button id="live">Get live demo</button>
-        </div>
-        <div class="ticks">
-          <ul>
-            <li>No credit card required</li>
-            <li>No software to install</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+    </nav>
   </body>
 </html>
