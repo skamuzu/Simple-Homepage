@@ -21,15 +21,15 @@
   </head>
   <body>
     <nav>
-      <img src="resources/logo-light.svg" alt="">
+      <img id="logo" src="resources/logo-light.svg" alt="">
       <input type="checkbox" id="sidebar-active" />
       <label for="sidebar-active" class="open-sidebar-button">
-        <img src="resources/hamburger-button.svg" alt="" />
+        <img id="hamburger" src="resources/hamburger-button.svg" alt="" />
       </label>
-
+      <label for="sidebar-active" id="overlay" ></label>
       <div class="links-container">
         <label for="sidebar-active" class="close-sidebar-button">
-          <img src="resources/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+          <img id="close" src="resources/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
         </label>
 
         <a href="#">About us</a>
@@ -37,7 +37,7 @@
         <a href="#">Resources</a>
         <a href="#">Contact</a>
         <div class="button-container">
-          <button><img src="resources/Sun_fill.svg" alt="" /></button>
+          <button><img id="theme-button" src="resources/Sun_fill.svg" alt="" /></button>
         </div>
       </div>
     </nav>

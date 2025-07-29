@@ -8,6 +8,27 @@ nav{
     padding: 4em 4em;
 }
 
+#overlay {
+    display: none;
+}
+
+.button-container {
+        background-color: var(--text-colour);
+        display: flex;
+        border-radius: 25px;
+        padding: 0.2em;
+    }
+
+    .button-container button {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--bg-colour);
+        cursor: pointer;
+    }
+
 .links-container {
     height: 100%;
     width: 60%;
@@ -35,62 +56,77 @@ nav a {
     display: none;
 }
 
+#hamburger {
+    width: 2em;
+    height: 2em;
+}
+
+
 .open-sidebar-button, .close-sidebar-button {
     display: none;
 }
-
 @media(max-width:950px) {
     .links-container {
-        display: flex;
+        
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
         background-color: var(--text-colour);
         z-index: 10;
         width: 300px;
-        padding: 1em;
+        padding: 2em 1em;
         box-shadow: -5px 0 5px rgba(0,0,0,0.25);
         border-top-left-radius: 1em;
-    
+        transition: 0.3s ease-in-out;
     }
-
+    
     .links-container a {
         color: var(--bg-colour);
         height: auto;
-    
         width: 100%;
-        max-height: 30px;
+        height: 3em;
+        padding: 1em;
     }
 
-    .close-sidebar-button {
+    .links-container a:hover {
+        color: var(--text-colour);
+        background-color: var(--bg-colour);
+        border-radius: 1em;
+    }
+    
+    .close-sidebar-button, .open-sidebar-button{
         display: block;
-        color: white;
+        color: var(--bg-colour);
     }
 
     nav {
-    padding: 3em 1em;
+        padding: 3em 1em;
     }
-
+    
     .button-container {
-        position: relative;
-        top: -49%;
-        background-color: var(--bg-colour);
-        display: flex;
-        width: 4em;
-        border-radius: 25px;
-        padding: 0.2em;
+        position: absolute;
+        top: 1.65em;
+        right: 10%;
     }
 
-    .button-container button {
-        border: 1px solid black;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        border-radius: 50%;
-        background-color: var(--bg-colour);
+   
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        background-color: rgba(0,0,0,0.15);
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
     }
 }
 

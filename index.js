@@ -1,13 +1,8 @@
 let darkMode = localStorage.getItem("darkmode");
-const theme = document.getElementsByClassName("theme")[0];
+const closeButton = document.getElementById("close");
 const themeButton = document.getElementById("theme-button");
 const logo = document.getElementById("logo");
-const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementsByClassName("sidebar")[0];
-
-function dragstartHandler(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
+const hamburger = document.getElementById("hamburger")
 
 
 const enableDarkmode = () => {
@@ -15,9 +10,8 @@ const enableDarkmode = () => {
     localStorage.setItem('darkmode','active');
     logo.src = 'resources/logo-dark.svg'
     themeButton.src = "resources/Moon_fill_light.svg"
-
-    // theme.style.justifyContent = "flex-start"
-    // theme.classList.add('slide')
+    closeButton.src = "resources/close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+    hamburger.src = "resources/menu_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
 };
 
 const disableDarkmode = () => {
@@ -25,7 +19,8 @@ const disableDarkmode = () => {
     localStorage.setItem('darkmode',null);
     logo.src = 'resources/logo-light.svg'
     themeButton.src = "resources/Sun_fill.svg"
-    // theme.style.justifyContent = "flex-end"
+    closeButton.src = "resources/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+    hamburger.src = "resources/hamburger-button.svg"
 };
 
 if (darkMode === "active") {
@@ -36,8 +31,5 @@ if (darkMode === "active") {
 themeButton.addEventListener("click", () => {
     darkMode = localStorage.getItem('darkmode')
   darkMode !== "active" ? enableDarkmode() : disableDarkmode();
+  console.log(themeButton)
 });
-
-hamburger.addEventListener("click", () => {
-  sidebar.classList.toggle("sidebar-toggle");
-})
