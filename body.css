@@ -1,0 +1,114 @@
+@import url(main.css);
+
+h2 {
+    color: var(--text-colour);
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 4em;
+    width: 12ch;
+    color: var(--text-colour);
+}
+
+p, li {
+    color: gray;
+}
+
+p {
+    width: 80%;
+}
+
+main {
+    padding: 1rem 4rem ;
+    display: flex;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1em;
+    flex: 1;
+
+}
+
+main img {
+    max-width: 600px;
+}
+
+.action-buttons {
+    display: flex;    
+    gap: 1em;
+}
+
+.action-buttons #start {
+    padding: 0.8em 2em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #f2f9ff;
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: 0.5em;
+    font-weight: 700;
+}
+
+#start:hover {
+    background-color: blue;
+}
+
+.action-buttons #live {
+    border: none;
+    padding: 1em 1em;
+    color: var(--button-colour);
+    background: none;
+    text-decoration: underline;
+    font-size: 1em;
+    text-underline-offset: 0.3em;
+    font-weight: 700;
+}
+
+#live:hover {
+    text-underline-offset: 0.6em;
+}
+
+.ticks {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    gap: 1em;
+}
+
+.ticks li::before {
+    content: " ";
+    position: relative;
+    padding: 1em;
+    width: 8px;
+    height: 8px;
+    background-image: url(resources/Done_ring_round_fill.svg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        flex-direction: column-reverse;
+        padding: 0.6em;
+    }
+
+    .ticks {
+        gap: 0.4em;
+        justify-content: space-between;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 2.4em;
+    }
+
+    li {
+        font-size: 0.8em;
+    }
+}

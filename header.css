@@ -37,6 +37,7 @@ nav{
     align-items: center;
     justify-content: flex-end;
     gap: 2em;
+    font-weight: 700;
 }
 
 nav a {
@@ -59,6 +60,11 @@ nav a {
 #hamburger {
     width: 2em;
     height: 2em;
+}
+
+.links-container a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.4em;
 }
 
 
@@ -95,6 +101,7 @@ nav a {
         color: var(--text-colour);
         background-color: var(--bg-colour);
         border-radius: 1em;
+        text-decoration: none;
     }
     
     .close-sidebar-button, .open-sidebar-button{

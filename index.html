@@ -6,6 +6,7 @@
     <title>Alarado</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="body.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,15 +22,19 @@
   </head>
   <body>
     <nav>
-      <img id="logo" src="resources/logo-light.svg" alt="">
+      <img id="logo" src="resources/logo-light.svg" alt="" />
       <input type="checkbox" id="sidebar-active" />
       <label for="sidebar-active" class="open-sidebar-button">
         <img id="hamburger" src="resources/hamburger-button.svg" alt="" />
       </label>
-      <label for="sidebar-active" id="overlay" ></label>
+      <label for="sidebar-active" id="overlay"></label>
       <div class="links-container">
         <label for="sidebar-active" class="close-sidebar-button">
-          <img id="close" src="resources/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+          <img
+            id="close"
+            src="resources/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+          />
         </label>
 
         <a href="#">About us</a>
@@ -37,9 +42,27 @@
         <a href="#">Resources</a>
         <a href="#">Contact</a>
         <div class="button-container">
-          <button><img id="theme-button" src="resources/Sun_fill.svg" alt="" /></button>
-        </div>
+          <button>
+            <img id="theme-button" src="resources/Sun_fill.svg" alt="" />
+          </button>
+        </div> 
       </div>
     </nav>
+    <main>
+      <article>
+        <h2>😎 Simple Way to Communicate</h2>
+        <h1>Actions for Accessibility in Design</h1>
+        <p>The fastest way to build and deploy websites with reusable components.</p>
+        <div class="action-buttons">
+          <button id="start">Get Started</button>
+          <button id="live">Get live demo</button>
+        </div>
+        <ul class="ticks">
+          <li>No credit card required</li>
+          <li>No software to install</li>
+        </ul>
+      </article>
+      <img src="resources/hero-image-simple-homepage.png" alt="" srcset="resources/hero-image-simple-homepage@2x.png 480px, resources/hero-image-simple-homepage.png 800px">
+    </main>
   </body>
 </html>
